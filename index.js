@@ -1,11 +1,9 @@
-const express = require("express");
+const express = require("express"); //import express
 
 const app = express();
 
-app.use(() => {
-  console.log("hello");
-  console.log("hello server");
-  console.log("Selamat datang");
-});
+const productRoutes = require("./src/routes/products");
+
+app.use("/", productRoutes);
 
 app.listen(4000);
